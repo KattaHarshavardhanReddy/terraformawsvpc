@@ -6,10 +6,6 @@ variable "environment" {
     default = "dev"
 }
 
-# variable "sg_name" {
-#   default = "mysql"
-# }
-
 variable "common_tags" {
   default = {
     project = "expense"
@@ -18,6 +14,4 @@ variable "common_tags" {
   }
 }
 
-# variable "vpc_id" {
 
-# }
