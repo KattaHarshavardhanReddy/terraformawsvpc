@@ -3,8 +3,8 @@ resource "aws_instance" "bastion" {
   vpc_security_group_ids = [data.aws_ssm_parameter.bastion_sg_id.value]
   instance_type = "t3.micro"
   subnet_id = local.public_subnet_id
-  tenancy = "default" 
-  
+
+
   tags = merge(
     var.common_tags,
     {
