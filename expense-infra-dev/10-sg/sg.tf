@@ -37,3 +37,13 @@ module "bastion_sg" {
     vpc_id = data.aws_ssm_parameter.vpc_id.value
     common_tags = var.common_tags
 }
+
+module "app_alb_sg" {
+    source = "git::https://github.com/KattaHarshavardhanReddy/terraformawsvpc.git//modules/sg?ref=main"
+    project_name = var.project_name
+    environment = var.environment
+    sg_name = "app_alb"
+    sg_description = "created for backend alb in expense dev"
+    vpc_id = data.aws_ssm_parameter.vpc_id.value
+    common_tags = var.common_tags
+}
